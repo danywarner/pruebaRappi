@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153923C2A23800055F047A07 /* Pods_pruebaRappi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BB3AA8922EC1EA0F0BC191 /* Pods_pruebaRappi.framework */; };
 		650A6C5C1C627D0A00AAF8AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C5B1C627D0A00AAF8AA /* AppDelegate.swift */; };
 		650A6C5E1C627D0A00AAF8AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C5D1C627D0A00AAF8AA /* ViewController.swift */; };
 		650A6C611C627D0A00AAF8AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 650A6C5F1C627D0A00AAF8AA /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50C1FA52810A012F7DAC90BB /* Pods-pruebaRappi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pruebaRappi.release.xcconfig"; path = "Pods/Target Support Files/Pods-pruebaRappi/Pods-pruebaRappi.release.xcconfig"; sourceTree = "<group>"; };
+		559993A7B0D8521352BD7744 /* Pods-pruebaRappi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pruebaRappi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pruebaRappi/Pods-pruebaRappi.debug.xcconfig"; sourceTree = "<group>"; };
 		650A6C581C627D0A00AAF8AA /* pruebaRappi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pruebaRappi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		650A6C5B1C627D0A00AAF8AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		650A6C5D1C627D0A00AAF8AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		650A6C651C627D0A00AAF8AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		650A6C681C627D0A00AAF8AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		650A6C6A1C627D0A00AAF8AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4BB3AA8922EC1EA0F0BC191 /* Pods_pruebaRappi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pruebaRappi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				153923C2A23800055F047A07 /* Pods_pruebaRappi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45E77DCE9442EB49980BBB6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				559993A7B0D8521352BD7744 /* Pods-pruebaRappi.debug.xcconfig */,
+				50C1FA52810A012F7DAC90BB /* Pods-pruebaRappi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4B9F5D8B60D6F5BBB7DDBF40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4BB3AA8922EC1EA0F0BC191 /* Pods_pruebaRappi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		650A6C4F1C627D0A00AAF8AA = {
 			isa = PBXGroup;
 			children = (
 				650A6C5A1C627D0A00AAF8AA /* pruebaRappi */,
 				650A6C591C627D0A00AAF8AA /* Products */,
+				45E77DCE9442EB49980BBB6E /* Pods */,
+				4B9F5D8B60D6F5BBB7DDBF40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +80,39 @@
 		650A6C5A1C627D0A00AAF8AA /* pruebaRappi */ = {
 			isa = PBXGroup;
 			children = (
+				650A6C701C62857A00AAF8AA /* Model */,
+				650A6C711C62857F00AAF8AA /* View */,
+				650A6C721C62858600AAF8AA /* Controller */,
 				650A6C5B1C627D0A00AAF8AA /* AppDelegate.swift */,
-				650A6C5D1C627D0A00AAF8AA /* ViewController.swift */,
-				650A6C5F1C627D0A00AAF8AA /* Main.storyboard */,
 				650A6C651C627D0A00AAF8AA /* Assets.xcassets */,
-				650A6C671C627D0A00AAF8AA /* LaunchScreen.storyboard */,
 				650A6C6A1C627D0A00AAF8AA /* Info.plist */,
 				650A6C621C627D0A00AAF8AA /* pruebaRappi.xcdatamodeld */,
 			);
 			path = pruebaRappi;
+			sourceTree = "<group>";
+		};
+		650A6C701C62857A00AAF8AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		650A6C711C62857F00AAF8AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				650A6C671C627D0A00AAF8AA /* LaunchScreen.storyboard */,
+				650A6C5F1C627D0A00AAF8AA /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		650A6C721C62858600AAF8AA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				650A6C5D1C627D0A00AAF8AA /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 650A6C6D1C627D0A00AAF8AA /* Build configuration list for PBXNativeTarget "pruebaRappi" */;
 			buildPhases = (
+				7C186A7411790CE9EDD8C3E7 /* Check Pods Manifest.lock */,
 				650A6C541C627D0A00AAF8AA /* Sources */,
 				650A6C551C627D0A00AAF8AA /* Frameworks */,
 				650A6C561C627D0A00AAF8AA /* Resources */,
+				EBA1EDE6B25E3E11BBC38508 /* Embed Pods Frameworks */,
+				1F6CD4CCF0DDF037D2472761 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +183,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F6CD4CCF0DDF037D2472761 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pruebaRappi/Pods-pruebaRappi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C186A7411790CE9EDD8C3E7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EBA1EDE6B25E3E11BBC38508 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pruebaRappi/Pods-pruebaRappi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		650A6C541C627D0A00AAF8AA /* Sources */ = {
@@ -251,9 +350,11 @@
 		};
 		650A6C6E1C627D0A00AAF8AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 559993A7B0D8521352BD7744 /* Pods-pruebaRappi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pruebaRappi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danywarner.pruebaRappi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -262,9 +363,11 @@
 		};
 		650A6C6F1C627D0A00AAF8AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C1FA52810A012F7DAC90BB /* Pods-pruebaRappi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pruebaRappi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danywarner.pruebaRappi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,6 +393,7 @@
 				650A6C6F1C627D0A00AAF8AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
