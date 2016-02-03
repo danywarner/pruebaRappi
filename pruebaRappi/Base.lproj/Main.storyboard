@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hvK-KF-rXR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AppCell" id="hvK-KF-rXR" customClass="AppCell" customModule="pruebaRappi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hvK-KF-rXR" id="JCt-DS-9pt">
@@ -33,7 +33,7 @@
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="4hC-9J-6Ss"/>
-                                                        <constraint firstAttribute="width" constant="152" id="Mu4-Wn-IGq"/>
+                                                        <constraint firstAttribute="width" constant="283" id="Mu4-Wn-IGq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,7 +85,8 @@
                                                             <exclude reference="mIj-NS-WQ2"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=compact">
+                                                    <variation key="heightClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="500" y="11" width="84" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="Dmn-XS-gKX"/>
                                                             <include reference="mIj-NS-WQ2"/>
@@ -138,6 +139,11 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="appImg" destination="PH1-Nx-Geb" id="4BX-Vc-ZTp"/>
+                                            <outlet property="appName" destination="9ZI-bD-TWb" id="GO5-q7-qpx"/>
+                                            <outlet property="appPrice" destination="qyp-KK-Qql" id="K0z-L3-l6L"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
