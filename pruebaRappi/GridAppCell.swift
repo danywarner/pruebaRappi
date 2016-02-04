@@ -21,9 +21,10 @@ class GridAppCell: UICollectionViewCell {
             request, response, data, err in
             
             if err == nil {
-                let img = UIImage(data: data!)!
-                self.appImgGrid.image = img
-                app.image = data
+                if let img = UIImage(data: data!) {
+                    self.appImgGrid.image = img
+                    app.image = data
+                }
             }
         })
     }

@@ -23,11 +23,12 @@ class AppCell: UITableViewCell {
             request, response, data, err in
             
             if err == nil {
-                let img = UIImage(data: data!)!
-                self.appImg.image = img
-                self.appImg.layer.cornerRadius = self.appImg.frame.size.width / 2
-                self.appImg.clipsToBounds = true
-                 app.image = data
+                if let img = UIImage(data: data!) {
+                    self.appImg.image = img
+                    self.appImg.layer.cornerRadius = self.appImg.frame.size.width / 2
+                    self.appImg.clipsToBounds = true
+                    app.image = data
+                }
             }
         })
     }
