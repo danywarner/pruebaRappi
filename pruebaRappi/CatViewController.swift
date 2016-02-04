@@ -58,6 +58,8 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
 //        
 //    }
     
+   
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         var cat: Category!
@@ -68,6 +70,21 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         performSegueWithIdentifier("MenuVC", sender: cat)
     }
     
+    func filterApps(category: String) -> Array<Application> {
+        
+        var filteredAppsArray = [Application]()
+        for var i = 0 ; i < apps.count ; i++ {
+            
+            let app = apps[i]
+            
+            if app.category == category {
+                filteredAppsArray.append(app)
+            }
+            
+        }
+        return filteredAppsArray
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "MenuVC" {
             
@@ -75,8 +92,10 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                 
                 if let category = sender as? Category {
                     
+                    let catName = category.categoryName
+                    let filteredApps = filterApps(catName!)
                     menuVC.category = category
-                    menuVC.apps = apps
+                    menuVC.apps = filteredApps
                     
                 }
             }
@@ -174,7 +193,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     }
     
     func createCategory(name: String) {
-        print("creando categoria: \(name)")
+        
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
         let entity = NSEntityDescription.entityForName("Category", inManagedObjectContext: context)!

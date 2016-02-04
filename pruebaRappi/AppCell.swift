@@ -30,7 +30,7 @@ class AppCell: UITableViewCell {
     
     func configureCell(app: Application) {
         appName.text = app.name
-        appPrice.text = "$\(app.price!)"
+        appPrice.text = "$\(app.price!) USD"
         
         Alamofire.request(.GET, app.imageUrl!).response(completionHandler: {
             request, response, data, err in
