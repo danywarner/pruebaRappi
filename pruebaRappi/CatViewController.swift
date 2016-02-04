@@ -161,6 +161,10 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                                 amount = (priceAttributes!["amount"] as? String)!
                                 currency = (priceAttributes!["currency"] as? String)!
                                 
+                                let entryDate = entries[x]["im:releaseDate"]
+                                let dateAttributes = (entryDate!!["attributes"])!
+                                releaseDate = (dateAttributes!["label"] as? String)!
+                                
                                 let entryRights = entries[x]["rights"]
                                 rights = (entryRights!!["label"] as? String)!
                                 
@@ -176,8 +180,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                                 }
                                 
                                 
-                                let entryDate = entries[x]["im:releaseDate"]
-                                releaseDate = (entryDate!!["label"] as? String)!
+                                
                                 
                                 self.createApplication(name,url: url, summary: summary, amount: amount, currency: currency, rights: rights, author: author,category: category,releaseDate: releaseDate)
                             }
@@ -226,6 +229,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         application.rights = rights
         application.artist = author
         application.category = category
+        application.releaseDate = releaseDate
         apps.append(application)
         context.insertObject(application)
         

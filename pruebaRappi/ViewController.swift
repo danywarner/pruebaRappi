@@ -63,6 +63,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return CGSizeMake(105,105)
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let app = apps[indexPath.row]
+        
+        performSegueWithIdentifier("AppDetailVC", sender: app)
+        
+    }
+    
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("AppCell") as? AppCell {

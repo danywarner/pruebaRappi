@@ -135,8 +135,8 @@
 		650A6C721C62858600AAF8AA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				650A6C5D1C627D0A00AAF8AA /* ViewController.swift */,
 				650A6C7F1C62DB2400AAF8AA /* CatViewController.swift */,
+				650A6C5D1C627D0A00AAF8AA /* ViewController.swift */,
 				650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */,
 			);
 			name = Controller;

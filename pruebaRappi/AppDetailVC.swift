@@ -11,14 +11,13 @@ import UIKit
 class AppDetailVC: UIViewController {
 
     
-    @IBOutlet weak var appImg: UIImageView!
     @IBOutlet weak var appNameLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var categoryLbl: UILabel!
     @IBOutlet weak var sellerLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var copyrightLbl: UILabel!
-    
+    @IBOutlet weak var appImg: UIImageView!
     @IBOutlet weak var priceLbl: UILabel!
     
     private var _application: Application?
@@ -34,6 +33,8 @@ class AppDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appImg.layer.cornerRadius = appImg.frame.size.width / 2
+        appImg.clipsToBounds = true
         appNameLbl.text = _application?.name
         descriptionLbl.text = _application?.summary
         categoryLbl.text = _application?.category
@@ -43,6 +44,7 @@ class AppDetailVC: UIViewController {
         appImg.image = UIImage(data: (_application?.image)!)
         let price = (_application?.price?.doubleValue)!
         priceLbl.text = "$\(price) USD"
+        
         
     }
     @IBAction func backBtnPressed(sender: AnyObject) {
