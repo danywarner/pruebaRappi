@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Alamofire
 
 class AppCell: UITableViewCell {
 
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var appImg: UIImageView!
     @IBOutlet weak var appPrice: UILabel!
+    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,8 +30,16 @@ class AppCell: UITableViewCell {
     
     func configureCell(app: Application) {
         appName.text = app.name
-        //appImg.image = app.getAppImage()
-        //appPrice.text = "$\(app.price)"
-    }
+        appPrice.text = "$\(app.price!)"
+        
+        Alamofire.request(.GET, app.imageUrl!).response(completionHandler: {
+            request, response, data, err in
+            
+            if err == nil {
+                let img = UIImage(data: data!)!
+                self.appImg.image = img
+                // app.image = img
+            }
+        })    }
 
 }

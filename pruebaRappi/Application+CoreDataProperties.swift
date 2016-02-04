@@ -22,5 +22,6 @@ extension Application {
     @NSManaged var releaseDate: String?
     @NSManaged var rights: String?
     @NSManaged var summary: String?
+    @NSManaged var imageUrl: String?
 
 }
