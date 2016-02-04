@@ -24,6 +24,7 @@
 		650A6C861C62E08000AAF8AA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C841C62E08000AAF8AA /* Category.swift */; };
 		650A6C881C63B19B00AAF8AA /* AppDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */; };
 		656C22E31C63F5240039B6FD /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656C22E21C63F5240039B6FD /* TransitionManager.swift */; };
+		656C22EA1C6414F20039B6FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 656C22E91C6414F20039B6FD /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		650A6C841C62E08000AAF8AA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailVC.swift; sourceTree = "<group>"; };
 		656C22E21C63F5240039B6FD /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		656C22E91C6414F20039B6FD /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D4BB3AA8922EC1EA0F0BC191 /* Pods_pruebaRappi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pruebaRappi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				650A6C651C627D0A00AAF8AA /* Assets.xcassets */,
 				650A6C6A1C627D0A00AAF8AA /* Info.plist */,
 				650A6C621C627D0A00AAF8AA /* pruebaRappi.xcdatamodeld */,
+				656C22E91C6414F20039B6FD /* InfoPlist.strings */,
 			);
 			path = pruebaRappi;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				650A6C691C627D0A00AAF8AA /* LaunchScreen.storyboard in Resources */,
+				656C22EA1C6414F20039B6FD /* InfoPlist.strings in Resources */,
 				650A6C661C627D0A00AAF8AA /* Assets.xcassets in Resources */,
 				650A6C611C627D0A00AAF8AA /* Main.storyboard in Resources */,
 			);
@@ -394,7 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pruebaRappi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danywarner.pruebaRappi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -407,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pruebaRappi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danywarner.pruebaRappi;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -19,7 +19,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="i6+" translatesAutoresizingMaskIntoConstraints="NO" id="tdz-T1-ZZm">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad" translatesAutoresizingMaskIntoConstraints="NO" id="QCh-JR-Vpd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad" highlightedImage=" " translatesAutoresizingMaskIntoConstraints="NO" id="QCh-JR-Vpd">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -80,6 +80,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name=" " width="550" height="440"/>
         <image name="i6+" width="2208" height="1242"/>
         <image name="ipad" width="768" height="1024"/>
     </resources>
