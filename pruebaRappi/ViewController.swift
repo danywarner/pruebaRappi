@@ -12,6 +12,7 @@ import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var categoryLabeliPad: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collection: UICollectionView!
@@ -26,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         collection.delegate = self
         collection.dataSource = self
-        
+        categoryLabeliPad.text = category?.categoryName
         categoryLabel.text = category?.categoryName
         
        // collection.reloadData()
