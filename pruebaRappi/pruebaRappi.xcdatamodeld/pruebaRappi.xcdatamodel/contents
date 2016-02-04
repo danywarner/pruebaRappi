@@ -11,7 +11,11 @@
         <attribute name="rights" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Application" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="Category" positionX="-54" positionY="63" width="128" height="60"/>
     </elements>
 </model>
