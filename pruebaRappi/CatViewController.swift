@@ -14,10 +14,10 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
 
     @IBOutlet weak var tableView: UITableView!
     
-    var apps = [Application]()
-    var categoriesArray = [Category]()
-    var categoriesTextArray = [String]()
-    let transitionManager = TransitionManager()
+    private var apps = [Application]()
+    private var categoriesArray = [Category]()
+    private var categoriesTextArray = [String]()
+    private var transitionManager = TransitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         
         if apps.count == 0 {
             downloadData()
-            
         }
         
         tableView.reloadData()
@@ -41,6 +40,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             let cat = categoriesArray[indexPath.row]
             cell.configureCell(cat)
             return cell
+            
         } else {
             return CatCell()
         }
@@ -56,19 +56,11 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         return 1
     }
     
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        
-//    }
-    
-   
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         var cat: Category!
-        
         cat = categoriesArray[indexPath.row]
-        
-        
         performSegueWithIdentifier("MenuVC", sender: cat)
     }
     
@@ -78,8 +70,8 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         for var i = 0 ; i < apps.count ; i++ {
             
             let app = apps[i]
-            
             if app.category == category {
+                
                 filteredAppsArray.append(app)
             }
             
@@ -109,6 +101,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     
     
     func fetchAndSetResults() {
+        
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
         let fetchRequest1 = NSFetchRequest(entityName: "Application")
@@ -117,6 +110,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         do {
             let results = try context.executeFetchRequest(fetchRequest1)
             self.apps = results as! [Application]
+            
         } catch let err as NSError {
             print(err.debugDescription)
         }
@@ -148,16 +142,19 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                 if let dict = response.result.value as? Dictionary<String, AnyObject> {
                     
                     if let feed = dict["feed"] as? Dictionary<String, AnyObject> {
+                        
                         if let entries = feed["entry"] as? Array<AnyObject> {
+                            
                             for var x = 0 ; x < entries.count ; x++ {
+                                
                                 let entryName = entries[x]["im:name"]
                                 name = (entryName!!["label"] as? String)!
                                 
-                                if let entryImageUrls = entries[x]["im:image"] {
-                                    
-                                    let image = entryImageUrls![2]
-                                    url = (image["label"] as? String)!
-                                }
+                                let entryImageUrls = entries[x]["im:image"]
+                                let image = entryImageUrls!![2]
+                                url = (image["label"] as? String)!
+                                
+                                
                                 let entrySummary = entries[x]["summary"]
                                 summary = (entrySummary!!["label"] as? String)!
                                 
@@ -179,24 +176,19 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                                 let entryCategory = entries[x]["category"]
                                 let categoryAttributes = (entryCategory!!["attributes"])!
                                 category = (categoryAttributes!["label"] as? String)!
+                                
                                 if !self.categoriesTextArray.contains(category) {
                                     self.categoriesTextArray.append(category)
                                     self.createCategory(category)
                                 }
-                                
-                                
-                                
                                 
                                 self.createApplication(name,url: url, summary: summary, amount: amount, currency: currency, rights: rights, author: author,category: category,releaseDate: releaseDate)
                             }
                         }
                     }
                 }
-                //self.downloadImages()
-                //self.collection.reloadData()
                 self.tableView.reloadData()
-                
-        }// response
+        }// closes response
         
     }
     
@@ -213,20 +205,19 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         do {
             try context.save()
         } catch {
-            print("could not save Category")
+            print("Could not save Category in context")
         }
     }
     
     func createApplication(name: String, url: String, summary: String,amount: String,currency: String, rights: String,author: String,category: String, releaseDate: String) {
         
         let number = Double(amount)
-        
         let price = NSNumber(double: number!)
-        
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
         let entity = NSEntityDescription.entityForName("Application", inManagedObjectContext: context)!
         let application = Application(entity: entity, insertIntoManagedObjectContext: context)
+        
         application.name = name
         application.imageUrl = url
         application.summary = summary
@@ -241,11 +232,8 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         do {
             try context.save()
         } catch {
-            print("could not save Application")
+            print("Could not save Application in context")
         }
     }
-    
-    
-
    
 }

@@ -16,9 +16,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collection: UICollectionView!
-    let transitionManager = TransitionManager()
-    var apps = [Application]()
-    var category: Category?
+    private var transitionManager = TransitionManager()
+    private var _apps = [Application]()
+    private var _category: Category?
+    
+    var apps: [Application] {
+        get {
+            return _apps
+        }
+        set {
+            _apps = newValue
+        }
+    }
+    
+    var category: Category {
+        get {
+            return _category!
+        }
+        set {
+            _category = newValue
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +45,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         collection.delegate = self
         collection.dataSource = self
-        categoryLabeliPad.text = category?.categoryName
-        categoryLabel.text = category?.categoryName
-        
-       // collection.reloadData()
-       // tableView.reloadData()
+        categoryLabeliPad.text = category.categoryName
+        categoryLabel.text = category.categoryName
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -40,15 +55,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let app = apps[indexPath.row]
             cell.configureCell(app)
-            
             return cell
+            
         } else {
             return UICollectionViewCell()
         }
-    }
-    
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,9 +75,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
         let app = apps[indexPath.row]
-        
         performSegueWithIdentifier("AppDetailVC", sender: app)
         
     }
@@ -80,6 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let app = apps[indexPath.row]
             cell.configureCell(app)
             return cell
+            
         } else {
             return AppCell()
         }
@@ -96,16 +108,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
          let app = apps[indexPath.row]
-        
         performSegueWithIdentifier("AppDetailVC", sender: app)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "AppDetailVC" {
+            
             if let detailsVC = segue.destinationViewController as? AppDetailVC {
+                
                 if let app = sender as? Application {
+                    
                     detailsVC.application = app
                 }
                 detailsVC.transitioningDelegate = self.transitionManager
@@ -115,10 +131,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBAction func iPadBackBtnPressed(sender: AnyObject) {
+        
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
     @IBAction func iPhoneBackButtonPressed(sender: AnyObject) {
+        
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
 }
 

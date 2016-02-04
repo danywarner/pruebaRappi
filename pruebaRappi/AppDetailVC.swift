@@ -48,7 +48,9 @@ class AppDetailVC: UIViewController {
         
     }
     @IBAction func backBtnPressed(sender: AnyObject) {
+        
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
 }
