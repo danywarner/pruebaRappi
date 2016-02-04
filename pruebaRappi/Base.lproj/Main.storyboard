@@ -601,16 +601,17 @@
                         <outlet property="categoryLabeliPad" destination="7eK-mI-Qat" id="qXW-9H-aq7"/>
                         <outlet property="collection" destination="ote-Mv-bYQ" id="20o-0m-cv6"/>
                         <outlet property="tableView" destination="ITD-d2-tdw" id="jdX-Jj-QCX"/>
+                        <segue destination="PY1-8q-pL9" kind="show" identifier="AppDetailVC" id="frt-2b-ZeX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="517.5" y="39"/>
         </scene>
-        <!--View Controller-->
+        <!--App DetailVC-->
         <scene sceneID="XOg-6w-hch">
             <objects>
-                <viewController id="PY1-8q-pL9" sceneMemberID="viewController">
+                <viewController id="PY1-8q-pL9" customClass="AppDetailVC" customModule="pruebaRappi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GfG-tD-pWf"/>
                         <viewControllerLayoutGuide type="bottom" id="7CF-Vd-sod"/>
@@ -618,12 +619,123 @@
                     <view key="view" contentMode="scaleToFill" id="Bbh-hI-6SU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djW-Vs-Qll">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASf-Bp-T3C">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="DFk-Dk-mHW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="DFk-Dk-mHW"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="DFk-Dk-mHW"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sC-mV-LJK">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="dD6-9g-1BD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="dD6-9g-1BD"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="dD6-9g-1BD"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="iPhoneBackBtnPressed:" destination="PY1-8q-pL9" eventType="touchUpInside" id="pzo-bM-Xcp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.41357402009999999" blue="0.3698964133" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="5sC-mV-LJK" firstAttribute="leading" secondItem="djW-Vs-Qll" secondAttribute="leading" constant="8" id="AOS-RP-d09"/>
+                                    <constraint firstItem="ASf-Bp-T3C" firstAttribute="top" secondItem="djW-Vs-Qll" secondAttribute="top" constant="16" id="D9P-mj-oOO"/>
+                                    <constraint firstAttribute="height" constant="45" id="GK0-7U-cMq"/>
+                                    <constraint firstItem="5sC-mV-LJK" firstAttribute="top" secondItem="djW-Vs-Qll" secondAttribute="top" constant="11" id="Iws-vw-suS"/>
+                                    <constraint firstItem="ASf-Bp-T3C" firstAttribute="centerX" secondItem="djW-Vs-Qll" secondAttribute="centerX" id="jJq-3l-Xtr"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="ASf-Bp-T3C"/>
+                                        <exclude reference="5sC-mV-LJK"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="GK0-7U-cMq"/>
+                                        <exclude reference="AOS-RP-d09"/>
+                                        <exclude reference="Iws-vw-suS"/>
+                                        <exclude reference="D9P-mj-oOO"/>
+                                        <exclude reference="jJq-3l-Xtr"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="ASf-Bp-T3C"/>
+                                        <include reference="5sC-mV-LJK"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="GK0-7U-cMq"/>
+                                        <include reference="AOS-RP-d09"/>
+                                        <include reference="Iws-vw-suS"/>
+                                        <include reference="D9P-mj-oOO"/>
+                                        <include reference="jJq-3l-Xtr"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="djW-Vs-Qll" firstAttribute="top" secondItem="Bbh-hI-6SU" secondAttribute="topMargin" id="2hB-wX-pHx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="djW-Vs-Qll" secondAttribute="trailing" constant="-20" id="MA6-sj-NrS"/>
+                            <constraint firstItem="djW-Vs-Qll" firstAttribute="leading" secondItem="Bbh-hI-6SU" secondAttribute="leadingMargin" constant="-20" id="mTZ-83-N8L"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="djW-Vs-Qll"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2hB-wX-pHx"/>
+                                <exclude reference="MA6-sj-NrS"/>
+                                <exclude reference="mTZ-83-N8L"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="djW-Vs-Qll"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2hB-wX-pHx"/>
+                                <include reference="MA6-sj-NrS"/>
+                                <include reference="mTZ-83-N8L"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="iPhoneAppNameLbl" destination="ASf-Bp-T3C" id="QJ0-1l-1GE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQm-en-h3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="39"/>
+            <point key="canvasLocation" x="1212" y="49.5"/>
         </scene>
     </scenes>
 </document>

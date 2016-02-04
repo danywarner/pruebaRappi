@@ -77,7 +77,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
         return apps.count
     }
     
@@ -85,6 +84,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+         let app = apps[indexPath.row]
+        
+        performSegueWithIdentifier("AppDetailVC", sender: app)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AppDetailVC" {
+            if let detailsVC = segue.destinationViewController as? AppDetailVC {
+                if let app = sender as? Application {
+                    detailsVC.application = app
+                }
+            }
+        }
+    }
+    
+    
     @IBAction func iPadBackBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

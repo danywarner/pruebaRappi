@@ -22,6 +22,7 @@
 		650A6C821C62DD6200AAF8AA /* CatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C811C62DD6200AAF8AA /* CatCell.swift */; };
 		650A6C851C62E08000AAF8AA /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C831C62E08000AAF8AA /* Category+CoreDataProperties.swift */; };
 		650A6C861C62E08000AAF8AA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C841C62E08000AAF8AA /* Category.swift */; };
+		650A6C881C63B19B00AAF8AA /* AppDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		650A6C811C62DD6200AAF8AA /* CatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatCell.swift; sourceTree = "<group>"; };
 		650A6C831C62E08000AAF8AA /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		650A6C841C62E08000AAF8AA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailVC.swift; sourceTree = "<group>"; };
 		D4BB3AA8922EC1EA0F0BC191 /* Pods_pruebaRappi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pruebaRappi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 			children = (
 				650A6C5D1C627D0A00AAF8AA /* ViewController.swift */,
 				650A6C7F1C62DB2400AAF8AA /* CatViewController.swift */,
+				650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				650A6C5E1C627D0A00AAF8AA /* ViewController.swift in Sources */,
 				650A6C641C627D0A00AAF8AA /* pruebaRappi.xcdatamodeld in Sources */,
 				650A6C7A1C62A3F700AAF8AA /* GridAppCell.swift in Sources */,
+				650A6C881C63B19B00AAF8AA /* AppDetailVC.swift in Sources */,
 				650A6C781C628E5800AAF8AA /* AppCell.swift in Sources */,
 				650A6C821C62DD6200AAF8AA /* CatCell.swift in Sources */,
 				650A6C851C62E08000AAF8AA /* Category+CoreDataProperties.swift in Sources */,
