@@ -38,7 +38,7 @@ class AppCell: UITableViewCell {
             if err == nil {
                 let img = UIImage(data: data!)!
                 self.appImg.image = img
-                // app.image = img
+                 app.image = data
             }
         })    }
 
