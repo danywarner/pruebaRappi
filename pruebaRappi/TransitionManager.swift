@@ -34,7 +34,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         
         let duration = self.transitionDuration(transitionContext)
        
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.1, options: UIViewAnimationOptions(), animations: {
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.1, options: UIViewAnimationOptions(), animations: {
             if (self.presenting){
                 fromView.transform = offScreenLeft
             }

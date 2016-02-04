@@ -18,10 +18,12 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     var categoriesArray = [Category]()
     var categoriesTextArray = [String]()
     let transitionManager = TransitionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
         fetchAndSetResults()
         
         if apps.count == 0 {

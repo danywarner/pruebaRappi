@@ -14,20 +14,7 @@ class AppCell: UITableViewCell {
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var appImg: UIImageView!
     @IBOutlet weak var appPrice: UILabel!
-    
 
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func configureCell(app: Application) {
         appName.text = app.name
         appPrice.text = "$\(app.price!) USD"
@@ -42,6 +29,12 @@ class AppCell: UITableViewCell {
                 self.appImg.clipsToBounds = true
                  app.image = data
             }
-        })    }
+        })
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
 
 }
