@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        collectionView.deselectItemAtIndexPath(indexPath, animated: false)
         let app = apps[indexPath.row]
         
         performSegueWithIdentifier("AppDetailVC", sender: app)
@@ -96,7 +96,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
          let app = apps[indexPath.row]
         
         performSegueWithIdentifier("AppDetailVC", sender: app)

@@ -26,8 +26,6 @@ class GridAppCell: UICollectionViewCell {
                 app.image = data
             }
         })
-        
-        
     }
     
    
@@ -35,6 +33,6 @@ class GridAppCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        layer.cornerRadius = 5.0
+        
     }
 }

@@ -17,7 +17,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     var apps = [Application]()
     var categoriesArray = [Category]()
     var categoriesTextArray = [String]()
-    
+    let transitionManager = TransitionManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -61,7 +61,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
         var cat: Category!
         
         cat = categoriesArray[indexPath.row]
@@ -85,6 +85,8 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         return filteredAppsArray
     }
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "MenuVC" {
             
@@ -98,6 +100,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                     menuVC.apps = filteredApps
                     
                 }
+                menuVC.transitioningDelegate = self.transitionManager
             }
         }
     }
