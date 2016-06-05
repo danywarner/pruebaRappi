@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 import UIKit
 
-
 class Application: NSManagedObject {
 
     func setAppImage(img:UIImage) {

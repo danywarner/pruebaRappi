@@ -15,7 +15,6 @@ class AppViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collection: UICollectionView!
-    private var transitionManager = TransitionManager()
     private var _apps = [Application]()
     private var _category: Category?
     
@@ -110,7 +109,6 @@ class AppViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     
                     detailsVC.application = app
                 }
-                detailsVC.transitioningDelegate = self.transitionManager
             } 
         }
     }

@@ -27,7 +27,6 @@
 		655CEEAA1D04D783002E0B68 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655CEEA91D04D783002E0B68 /* SystemConfiguration.framework */; };
 		655CEEAC1D04DB14002E0B68 /* CoreDataQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CEEAB1D04DB14002E0B68 /* CoreDataQueries.swift */; };
 		655CEEAE1D04DC3B002E0B68 /* NetworkTasksHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CEEAD1D04DC3B002E0B68 /* NetworkTasksHelper.swift */; };
-		656C22E31C63F5240039B6FD /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656C22E21C63F5240039B6FD /* TransitionManager.swift */; };
 		656C22EA1C6414F20039B6FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 656C22E91C6414F20039B6FD /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +56,6 @@
 		655CEEA91D04D783002E0B68 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		655CEEAB1D04DB14002E0B68 /* CoreDataQueries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataQueries.swift; sourceTree = "<group>"; };
 		655CEEAD1D04DC3B002E0B68 /* NetworkTasksHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTasksHelper.swift; sourceTree = "<group>"; };
-		656C22E21C63F5240039B6FD /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		656C22E91C6414F20039B6FD /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D4BB3AA8922EC1EA0F0BC191 /* Pods_pruebaRappi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pruebaRappi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,7 +155,6 @@
 				650A6C7F1C62DB2400AAF8AA /* CatViewController.swift */,
 				650A6C5D1C627D0A00AAF8AA /* AppViewController.swift */,
 				650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */,
-				656C22E21C63F5240039B6FD /* TransitionManager.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -301,7 +298,6 @@
 				650A6C801C62DB2400AAF8AA /* CatViewController.swift in Sources */,
 				650A6C5E1C627D0A00AAF8AA /* AppViewController.swift in Sources */,
 				655CEEAE1D04DC3B002E0B68 /* NetworkTasksHelper.swift in Sources */,
-				656C22E31C63F5240039B6FD /* TransitionManager.swift in Sources */,
 				650A6C641C627D0A00AAF8AA /* pruebaRappi.xcdatamodeld in Sources */,
 				650A6C7A1C62A3F700AAF8AA /* GridAppCell.swift in Sources */,
 				650A6C881C63B19B00AAF8AA /* AppDetailVC.swift in Sources */,

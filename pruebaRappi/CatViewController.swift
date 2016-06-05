@@ -17,7 +17,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     private var _apps = [Application]()
     private var _categoriesArray = [Category]()
     private var _categoriesTextArray = [String]()
-    private var transitionManager = TransitionManager()
     private var reach: Reachability!
     
     var apps: [Application] {
@@ -128,7 +127,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                     menuVC.category = category
                     menuVC.apps = filteredApps
                 }
-                menuVC.transitioningDelegate = self.transitionManager
             }
         }
     }

@@ -97,5 +97,4 @@ class CoreDataQueries {
             print(err.debugDescription)
         }
     }
-
 }
