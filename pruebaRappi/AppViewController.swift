@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class AppViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var categoryLabeliPad: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -66,10 +66,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return apps.count
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(105,105)
     }
@@ -98,11 +94,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return apps.count
     }
     
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
@@ -124,7 +115,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             } 
         }
     }
-    
     
     @IBAction func iPadBackBtnPressed(sender: AnyObject) {
         

@@ -70,10 +70,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         return categoriesArray.count
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
@@ -99,7 +95,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "MenuVC" {
             
-            if let menuVC = segue.destinationViewController as? ViewController {
+            if let menuVC = segue.destinationViewController as? AppViewController {
                 
                 if let category = sender as? Category {
                     

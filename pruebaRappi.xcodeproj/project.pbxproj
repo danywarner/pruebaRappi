@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		153923C2A23800055F047A07 /* Pods_pruebaRappi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BB3AA8922EC1EA0F0BC191 /* Pods_pruebaRappi.framework */; };
 		650A6C5C1C627D0A00AAF8AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C5B1C627D0A00AAF8AA /* AppDelegate.swift */; };
-		650A6C5E1C627D0A00AAF8AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C5D1C627D0A00AAF8AA /* ViewController.swift */; };
+		650A6C5E1C627D0A00AAF8AA /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C5D1C627D0A00AAF8AA /* AppViewController.swift */; };
 		650A6C611C627D0A00AAF8AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 650A6C5F1C627D0A00AAF8AA /* Main.storyboard */; };
 		650A6C641C627D0A00AAF8AA /* pruebaRappi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C621C627D0A00AAF8AA /* pruebaRappi.xcdatamodeld */; };
 		650A6C661C627D0A00AAF8AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650A6C651C627D0A00AAF8AA /* Assets.xcassets */; };
@@ -34,7 +34,7 @@
 		559993A7B0D8521352BD7744 /* Pods-pruebaRappi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pruebaRappi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pruebaRappi/Pods-pruebaRappi.debug.xcconfig"; sourceTree = "<group>"; };
 		650A6C581C627D0A00AAF8AA /* pruebaRappi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pruebaRappi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		650A6C5B1C627D0A00AAF8AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		650A6C5D1C627D0A00AAF8AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		650A6C5D1C627D0A00AAF8AA /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		650A6C601C627D0A00AAF8AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		650A6C631C627D0A00AAF8AA /* pruebaRappi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pruebaRappi.xcdatamodel; sourceTree = "<group>"; };
 		650A6C651C627D0A00AAF8AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				650A6C7F1C62DB2400AAF8AA /* CatViewController.swift */,
-				650A6C5D1C627D0A00AAF8AA /* ViewController.swift */,
+				650A6C5D1C627D0A00AAF8AA /* AppViewController.swift */,
 				650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */,
 				656C22E21C63F5240039B6FD /* TransitionManager.swift */,
 			);
@@ -293,7 +293,7 @@
 			files = (
 				650A6C761C628CD800AAF8AA /* Application.swift in Sources */,
 				650A6C801C62DB2400AAF8AA /* CatViewController.swift in Sources */,
-				650A6C5E1C627D0A00AAF8AA /* ViewController.swift in Sources */,
+				650A6C5E1C627D0A00AAF8AA /* AppViewController.swift in Sources */,
 				656C22E31C63F5240039B6FD /* TransitionManager.swift in Sources */,
 				650A6C641C627D0A00AAF8AA /* pruebaRappi.xcdatamodeld in Sources */,
 				650A6C7A1C62A3F700AAF8AA /* GridAppCell.swift in Sources */,
