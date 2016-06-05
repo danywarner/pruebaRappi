@@ -25,6 +25,8 @@
 		650A6C881C63B19B00AAF8AA /* AppDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */; };
 		655CEEA81D04D750002E0B68 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CEEA71D04D750002E0B68 /* Reachability.m */; };
 		655CEEAA1D04D783002E0B68 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655CEEA91D04D783002E0B68 /* SystemConfiguration.framework */; };
+		655CEEAC1D04DB14002E0B68 /* CoreDataQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CEEAB1D04DB14002E0B68 /* CoreDataQueries.swift */; };
+		655CEEAE1D04DC3B002E0B68 /* NetworkTasksHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CEEAD1D04DC3B002E0B68 /* NetworkTasksHelper.swift */; };
 		656C22E31C63F5240039B6FD /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656C22E21C63F5240039B6FD /* TransitionManager.swift */; };
 		656C22EA1C6414F20039B6FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 656C22E91C6414F20039B6FD /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		655CEEA61D04D750002E0B68 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		655CEEA71D04D750002E0B68 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		655CEEA91D04D783002E0B68 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		655CEEAB1D04DB14002E0B68 /* CoreDataQueries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataQueries.swift; sourceTree = "<group>"; };
+		655CEEAD1D04DC3B002E0B68 /* NetworkTasksHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTasksHelper.swift; sourceTree = "<group>"; };
 		656C22E21C63F5240039B6FD /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		656C22E91C6414F20039B6FD /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D4BB3AA8922EC1EA0F0BC191 /* Pods_pruebaRappi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pruebaRappi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,7 @@
 				650A6C841C62E08000AAF8AA /* Category.swift */,
 				650A6C7D1C62B22900AAF8AA /* Application+CoreDataProperties.swift */,
 				650A6C741C628CD800AAF8AA /* Application.swift */,
+				655CEEAB1D04DB14002E0B68 /* CoreDataQueries.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				655CEEA61D04D750002E0B68 /* Reachability.h */,
 				655CEEA71D04D750002E0B68 /* Reachability.m */,
 				655CEEA51D04D72A002E0B68 /* pruebaRappi-Bridging-Header.h */,
+				655CEEAD1D04DC3B002E0B68 /* NetworkTasksHelper.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -294,10 +300,12 @@
 				650A6C761C628CD800AAF8AA /* Application.swift in Sources */,
 				650A6C801C62DB2400AAF8AA /* CatViewController.swift in Sources */,
 				650A6C5E1C627D0A00AAF8AA /* AppViewController.swift in Sources */,
+				655CEEAE1D04DC3B002E0B68 /* NetworkTasksHelper.swift in Sources */,
 				656C22E31C63F5240039B6FD /* TransitionManager.swift in Sources */,
 				650A6C641C627D0A00AAF8AA /* pruebaRappi.xcdatamodeld in Sources */,
 				650A6C7A1C62A3F700AAF8AA /* GridAppCell.swift in Sources */,
 				650A6C881C63B19B00AAF8AA /* AppDetailVC.swift in Sources */,
+				655CEEAC1D04DB14002E0B68 /* CoreDataQueries.swift in Sources */,
 				650A6C781C628E5800AAF8AA /* AppCell.swift in Sources */,
 				650A6C821C62DD6200AAF8AA /* CatCell.swift in Sources */,
 				650A6C851C62E08000AAF8AA /* Category+CoreDataProperties.swift in Sources */,

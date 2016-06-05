@@ -17,11 +17,39 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
 
     @IBOutlet weak var tableView: UITableView!
     
-    private var apps = [Application]()
-    private var categoriesArray = [Category]()
-    private var categoriesTextArray = [String]()
+    private var _apps = [Application]()
+    private var _categoriesArray = [Category]()
+    private var _categoriesTextArray = [String]()
     private var transitionManager = TransitionManager()
     private var reach: Reachability!
+    
+    var apps: [Application] {
+        get {
+            return _apps
+        }
+        set {
+            _apps = newValue
+        }
+    }
+    
+    var categoriesArray: [Category] {
+        get {
+            return _categoriesArray
+        }
+        set {
+            _categoriesArray = newValue
+        }
+    }
+    
+    var categoriesTextArray: [String] {
+        get {
+            return _categoriesTextArray
+        }
+        set {
+            _categoriesTextArray = newValue
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +65,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             categoriesArray = [Category]()
             categoriesTextArray = [String]()
             self.showWaitOverlayWithText("cargando")
-            downloadData()
+            NetworkTasksHelper.downloadData(self)
         }
         
         tableView.reloadData()
@@ -130,119 +158,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             self.categoriesArray = results as! [Category]
         } catch let err as NSError {
             print(err.debugDescription)
-        }
-    }
-    
-    func updateModel(response: Response<AnyObject, NSError>) {
-        
-        if let dict = response.result.value as? Dictionary<String, AnyObject> {
-            
-            let json = JSON(dict)
-            let entries = json["feed"]["entry"]
-            
-            for entry in entries.arrayValue  {
-                
-                let name = entry["im:name"]["label"].stringValue
-                
-                let url = entry["im:image"][2]["label"].stringValue
-                
-                let summary = entry["summary"]["label"].stringValue
-                
-                let priceAttributes = entry["im:price"]["attributes"]
-                let amount = (priceAttributes["amount"].stringValue)
-                let currency = (priceAttributes["currency"].stringValue)
-                
-                let dateAttributes = entry["im:releaseDate"]["attributes"]
-                let releaseDate = (dateAttributes["label"].stringValue)
-                
-                let rights = entry["rights"]["label"].stringValue
-                
-                let author = entry["im:artist"]["label"].stringValue
-                
-                let categoryAttributes = entry["category"]["attributes"]
-                let category = (categoryAttributes["label"].stringValue)
-                
-                if !self.categoriesTextArray.contains(category) {
-                    self.categoriesTextArray.append(category)
-                    self.createCategory(category)
-                }
-                
-                self.createApplication(name,url: url, summary: summary, amount: amount, currency: currency, rights: rights, author: author,category: category,releaseDate: releaseDate)
-            }
-            tableView.reloadData()
-        }
-    }
-    
-    func downloadData() {
-        
-        Alamofire.request(.GET, "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json")
-            .responseJSON { response in
-                self.updateModel(response)
-                self.removeAllOverlays()
-        }
-    }
-    
-    func createCategory(name: String) {
-        
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = app.managedObjectContext
-        let entity = NSEntityDescription.entityForName("Category", inManagedObjectContext: context)!
-        let category = Category(entity: entity, insertIntoManagedObjectContext: context)
-        category.categoryName = name
-        categoriesArray.append(category)
-        context.insertObject(category)
-        
-        do {
-            try context.save()
-        } catch {
-            print("Could not save Category in context")
-        }
-    }
-    
-    func createApplication(name: String, url: String, summary: String,amount: String,currency: String, rights: String,author: String,category: String, releaseDate: String) {
-        
-        let number = Double(amount)
-        let price = NSNumber(double: number!)
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = app.managedObjectContext
-        let entity = NSEntityDescription.entityForName("Application", inManagedObjectContext: context)!
-        let application = Application(entity: entity, insertIntoManagedObjectContext: context)
-        
-        application.name = name
-        application.imageUrl = url
-        application.summary = summary
-        application.price = price
-        application.rights = rights
-        application.artist = author
-        application.category = category
-        application.releaseDate = releaseDate
-        apps.append(application)
-        context.insertObject(application)
-        
-        do {
-            try context.save()
-        } catch {
-            print("Could not save Application in context")
-        }
-    }
-    
-    func deleteAllData(entity: String)
-    {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: entity)
-        fetchRequest.returnsObjectsAsFaults = false
-        
-        do
-        {
-            let results = try managedContext.executeFetchRequest(fetchRequest)
-            for managedObject in results
-            {
-                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-                managedContext.deleteObject(managedObjectData)
-            }
-        } catch let error as NSError {
-            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
         }
     }
 }
