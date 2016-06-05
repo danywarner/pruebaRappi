@@ -204,7 +204,8 @@
                                                             <exclude reference="mIj-NS-WQ2"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=compact">
+                                                    <variation key="heightClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="112" y="11" width="84" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="Dmn-XS-gKX"/>
                                                             <include reference="mIj-NS-WQ2"/>

@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import CoreData
 import SwiftyJSON
+import SwiftOverlays
+
 
 class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
@@ -19,18 +21,36 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     private var categoriesArray = [Category]()
     private var categoriesTextArray = [String]()
     private var transitionManager = TransitionManager()
+    private var reach: Reachability!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
         fetchAndSetResults()
         
-        if apps.count == 0 {
+        reach = Reachability.reachabilityForInternetConnection()
+        if reach.isReachable() {
+            apps = [Application]()
+            categoriesArray = [Category]()
+            categoriesTextArray = [String]()
+            self.showWaitOverlayWithText("cargando")
             downloadData()
         }
+        
         tableView.reloadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        reach = Reachability.reachabilityForInternetConnection()
+        if !reach.isReachable() {
+            let alert = UIAlertController(title: "Alerta!", message: "No hay conexión a Internet", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -153,6 +173,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                 
                 self.createApplication(name,url: url, summary: summary, amount: amount, currency: currency, rights: rights, author: author,category: category,releaseDate: releaseDate)
             }
+            tableView.reloadData()
         }
     }
     
@@ -161,6 +182,7 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         Alamofire.request(.GET, "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json")
             .responseJSON { response in
                 self.updateModel(response)
+                self.removeAllOverlays()
         }
     }
     
@@ -205,6 +227,26 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             try context.save()
         } catch {
             print("Could not save Application in context")
+        }
+    }
+    
+    func deleteAllData(entity: String)
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.deleteObject(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
         }
     }
 }

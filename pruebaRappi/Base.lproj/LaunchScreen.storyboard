@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -40,14 +41,14 @@
                                 <exclude reference="QCh-JR-Vpd"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Oph-AJ-4pu"/>
-                                <exclude reference="dwM-dQ-dXe"/>
-                                <exclude reference="r97-hd-vDf"/>
+                                <exclude reference="8Tt-Lk-ebh"/>
+                                <exclude reference="WQa-RJ-wMa"/>
                                 <exclude reference="O8a-R2-KLJ"/>
                                 <exclude reference="ZhF-7b-g1U"/>
                                 <exclude reference="lHm-Xk-8dv"/>
-                                <exclude reference="8Tt-Lk-ebh"/>
-                                <exclude reference="WQa-RJ-wMa"/>
+                                <exclude reference="Oph-AJ-4pu"/>
+                                <exclude reference="dwM-dQ-dXe"/>
+                                <exclude reference="r97-hd-vDf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -55,10 +56,10 @@
                                 <include reference="tdz-T1-ZZm"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WQa-RJ-wMa"/>
                                 <include reference="Oph-AJ-4pu"/>
                                 <include reference="dwM-dQ-dXe"/>
                                 <include reference="r97-hd-vDf"/>
-                                <include reference="WQa-RJ-wMa"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -66,10 +67,10 @@
                                 <include reference="QCh-JR-Vpd"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="8Tt-Lk-ebh"/>
                                 <include reference="O8a-R2-KLJ"/>
                                 <include reference="ZhF-7b-g1U"/>
                                 <include reference="lHm-Xk-8dv"/>
-                                <include reference="8Tt-Lk-ebh"/>
                             </mask>
                         </variation>
                     </view>
