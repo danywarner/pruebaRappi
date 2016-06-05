@@ -35,7 +35,5 @@ class AppCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-
 }

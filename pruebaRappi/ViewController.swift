@@ -82,8 +82,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("AppCell") as? AppCell {
@@ -91,11 +89,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let app = apps[indexPath.row]
             cell.configureCell(app)
             return cell
-            
         } else {
             return AppCell()
         }
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -133,12 +129,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func iPadBackBtnPressed(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)
-        
     }
+    
     @IBAction func iPhoneBackButtonPressed(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)
-        
     }
 }
-

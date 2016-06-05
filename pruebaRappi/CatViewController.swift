@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import CoreData
+import SwiftyJSON
 
 class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
@@ -29,7 +30,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         if apps.count == 0 {
             downloadData()
         }
-        
         tableView.reloadData()
     }
     
@@ -44,8 +44,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         } else {
             return CatCell()
         }
-        
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,19 +65,16 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     func filterApps(category: String) -> Array<Application> {
         
         var filteredAppsArray = [Application]()
-        for var i = 0 ; i < apps.count ; i++ {
+        for i in 0  ..< apps.count  {
             
             let app = apps[i]
             if app.category == category {
                 
                 filteredAppsArray.append(app)
             }
-            
         }
         return filteredAppsArray
     }
-    
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "MenuVC" {
@@ -92,7 +87,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                     let filteredApps = filterApps(catName!)
                     menuVC.category = category
                     menuVC.apps = filteredApps
-                    
                 }
                 menuVC.transitioningDelegate = self.transitionManager
             }
@@ -123,73 +117,51 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         }
     }
     
+    func updateModel(response: Response<AnyObject, NSError>) {
+        
+        if let dict = response.result.value as? Dictionary<String, AnyObject> {
+            
+            let json = JSON(dict)
+            let entries = json["feed"]["entry"]
+            
+            for entry in entries.arrayValue  {
+                
+                let name = entry["im:name"]["label"].stringValue
+                
+                let url = entry["im:image"][2]["label"].stringValue
+                
+                let summary = entry["summary"]["label"].stringValue
+                
+                let priceAttributes = entry["im:price"]["attributes"]
+                let amount = (priceAttributes["amount"].stringValue)
+                let currency = (priceAttributes["currency"].stringValue)
+                
+                let dateAttributes = entry["im:releaseDate"]["attributes"]
+                let releaseDate = (dateAttributes["label"].stringValue)
+                
+                let rights = entry["rights"]["label"].stringValue
+                
+                let author = entry["im:artist"]["label"].stringValue
+                
+                let categoryAttributes = entry["category"]["attributes"]
+                let category = (categoryAttributes["label"].stringValue)
+                
+                if !self.categoriesTextArray.contains(category) {
+                    self.categoriesTextArray.append(category)
+                    self.createCategory(category)
+                }
+                
+                self.createApplication(name,url: url, summary: summary, amount: amount, currency: currency, rights: rights, author: author,category: category,releaseDate: releaseDate)
+            }
+        }
+    }
     
     func downloadData() {
         
-        var name = ""
-        var url = ""
-        var summary = ""
-        var amount = ""
-        var currency = ""
-        var rights = ""
-        var author = ""
-        var category = ""
-        var releaseDate = ""
-        
         Alamofire.request(.GET, "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json")
             .responseJSON { response in
-                
-                if let dict = response.result.value as? Dictionary<String, AnyObject> {
-                    
-                    if let feed = dict["feed"] as? Dictionary<String, AnyObject> {
-                        
-                        if let entries = feed["entry"] as? Array<AnyObject> {
-                            
-                            for var x = 0 ; x < entries.count ; x++ {
-                                
-                                let entryName = entries[x]["im:name"]
-                                name = (entryName!!["label"] as? String)!
-                                
-                                let entryImageUrls = entries[x]["im:image"]
-                                let image = entryImageUrls!![2]
-                                url = (image["label"] as? String)!
-                                
-                                
-                                let entrySummary = entries[x]["summary"]
-                                summary = (entrySummary!!["label"] as? String)!
-                                
-                                let entryPrice = entries[x]["im:price"]
-                                let priceAttributes = (entryPrice!!["attributes"])!
-                                amount = (priceAttributes!["amount"] as? String)!
-                                currency = (priceAttributes!["currency"] as? String)!
-                                
-                                let entryDate = entries[x]["im:releaseDate"]
-                                let dateAttributes = (entryDate!!["attributes"])!
-                                releaseDate = (dateAttributes!["label"] as? String)!
-                                
-                                let entryRights = entries[x]["rights"]
-                                rights = (entryRights!!["label"] as? String)!
-                                
-                                let entryArtist = entries[x]["im:artist"]
-                                author = (entryArtist!!["label"] as? String)!
-                                
-                                let entryCategory = entries[x]["category"]
-                                let categoryAttributes = (entryCategory!!["attributes"])!
-                                category = (categoryAttributes!["label"] as? String)!
-                                
-                                if !self.categoriesTextArray.contains(category) {
-                                    self.categoriesTextArray.append(category)
-                                    self.createCategory(category)
-                                }
-                                
-                                self.createApplication(name,url: url, summary: summary, amount: amount, currency: currency, rights: rights, author: author,category: category,releaseDate: releaseDate)
-                            }
-                        }
-                    }
-                }
-                self.tableView.reloadData()
-        }// closes response
-        
+                self.updateModel(response)
+        }
     }
     
     func createCategory(name: String) {
@@ -235,5 +207,4 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             print("Could not save Application in context")
         }
     }
-   
 }

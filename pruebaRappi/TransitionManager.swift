@@ -46,8 +46,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
             
             }, completion: { finished in
                 
-                transitionContext.completeTransition(true)
-                
+                transitionContext.completeTransition(true)    
         })
     }
     
@@ -64,6 +63,4 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         self.presenting = false
         return self
     }
-    
-
 }

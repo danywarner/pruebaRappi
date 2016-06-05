@@ -17,9 +17,6 @@ class CatCell: UITableViewCell {
     }
 
     override func awakeFromNib() {
-        super.awakeFromNib()
-        
+        super.awakeFromNib()   
     }
-    
-
 }

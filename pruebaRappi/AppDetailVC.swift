@@ -44,13 +44,9 @@ class AppDetailVC: UIViewController {
         appImg.image = UIImage(data: (_application?.image)!)
         let price = (_application?.price?.doubleValue)!
         priceLbl.text = "$\(price) USD"
-        
-        
-    }
-    @IBAction func backBtnPressed(sender: AnyObject) {
-        
-        dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
+    @IBAction func backBtnPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
