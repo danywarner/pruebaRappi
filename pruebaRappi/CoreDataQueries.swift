@@ -56,8 +56,7 @@ class CoreDataQueries {
         return application
     }
     
-    class func deleteAllData(entity: String)
-    {
+    class func deleteAllData(entity: String) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: entity)
@@ -75,4 +74,28 @@ class CoreDataQueries {
             print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
         }
     }
+    
+    class func fetchAndSetResults(controller: CatViewController) {
+        
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = app.managedObjectContext
+        let fetchRequest1 = NSFetchRequest(entityName: "Application")
+        let fetchRequest2 = NSFetchRequest(entityName: "Category")
+        
+        do {
+            let results = try context.executeFetchRequest(fetchRequest1)
+            controller.apps = results as! [Application]
+            
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+        
+        do {
+            let results = try context.executeFetchRequest(fetchRequest2)
+            controller.categoriesArray = results as! [Category]
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+    }
+
 }

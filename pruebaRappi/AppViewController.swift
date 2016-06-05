@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import CoreData
 
 class AppViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     

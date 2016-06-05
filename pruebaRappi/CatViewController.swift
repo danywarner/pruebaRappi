@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import CoreData
-import SwiftyJSON
 import SwiftOverlays
 
 
@@ -50,16 +47,16 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        fetchAndSetResults()
+        CoreDataQueries.fetchAndSetResults(self)
         
         reach = Reachability.reachabilityForInternetConnection()
+        
         if reach.isReachable() {
             apps = [Application]()
             categoriesArray = [Category]()
@@ -67,7 +64,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             self.showWaitOverlayWithText("cargando")
             NetworkTasksHelper.downloadData(self)
         }
-        
         tableView.reloadData()
     }
     
@@ -134,30 +130,6 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                 }
                 menuVC.transitioningDelegate = self.transitionManager
             }
-        }
-    }
-    
-    
-    func fetchAndSetResults() {
-        
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = app.managedObjectContext
-        let fetchRequest1 = NSFetchRequest(entityName: "Application")
-        let fetchRequest2 = NSFetchRequest(entityName: "Category")
-        
-        do {
-            let results = try context.executeFetchRequest(fetchRequest1)
-            self.apps = results as! [Application]
-            
-        } catch let err as NSError {
-            print(err.debugDescription)
-        }
-        
-        do {
-            let results = try context.executeFetchRequest(fetchRequest2)
-            self.categoriesArray = results as! [Category]
-        } catch let err as NSError {
-            print(err.debugDescription)
         }
     }
 }
