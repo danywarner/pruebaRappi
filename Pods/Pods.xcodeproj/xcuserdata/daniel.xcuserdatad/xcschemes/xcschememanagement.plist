@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ElasticTransition.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MotionAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-pruebaRappi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>37B42A5EAFFEAF98F2EE3C7ED87080F9</key>
+		<key>0BC0E33AF441955D3AFE911602C8F4D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>19F7DD67365828FE19162BFCD7770591</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C4A6BFD83D3DA23A607E337F34BC54D</key>
+		<key>7CAAB4AEB098D0E3D8522D5B093FB6E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EAB32E47D16B9267C6F80B18C67E802C</key>
+		<key>A83C94331A63FF6173BB38D76E061726</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F28D60B0CC50AC866DDCE4811140455A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,5 +7,6 @@ target 'pruebaRappi' do
 	pod 'Alamofire', '~> 3.0'
 	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 	pod 'SwiftOverlays', '~> 2.0.0'
+	pod "ElasticTransition", "~> 3.0.0"
 end
 

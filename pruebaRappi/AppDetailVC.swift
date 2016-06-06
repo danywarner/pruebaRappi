@@ -41,9 +41,15 @@ class AppDetailVC: ElasticModalViewController {
         sellerLbl.text = _application?.artist
         dateLbl.text = _application?.releaseDate
         copyrightLbl.text = _application?.rights
-        appImg.image = UIImage(data: (_application?.image)!)
-        let price = (_application?.price?.doubleValue)!
-        priceLbl.text = "$\(price) USD"
+        
+        if let priceData = (_application?.price?.doubleValue) {
+            priceLbl.text = "$\(priceData) USD"
+        }
+        
+        if let imgData = (_application?.image) {
+            appImg.image = UIImage(data: imgData)
+        }
+        
     }
     
     @IBAction func backBtnPressed(sender: AnyObject) {
