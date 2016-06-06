@@ -19,6 +19,8 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     private var _categoriesTextArray = [String]()
     private var reach: Reachability!
     
+    var transition = ElasticTransition()
+    
     var apps: [Application] {
         get {
             return _apps
@@ -64,6 +66,11 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             NetworkTasksHelper.downloadData(self)
         }
         tableView.reloadData()
+        
+        transition.sticky = true
+        transition.showShadow = true
+        transition.panThreshold = 0.3
+        transition.transformType = .TranslateMid
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -98,6 +105,8 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         var cat: Category!
         cat = categoriesArray[indexPath.row]
+        transition.edge = .Right
+        //transition.startingPoint = sender.center
         performSegueWithIdentifier("MenuVC", sender: cat)
     }
     

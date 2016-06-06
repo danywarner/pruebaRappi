@@ -23,6 +23,12 @@
 		650A6C851C62E08000AAF8AA /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C831C62E08000AAF8AA /* Category+CoreDataProperties.swift */; };
 		650A6C861C62E08000AAF8AA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C841C62E08000AAF8AA /* Category.swift */; };
 		650A6C881C63B19B00AAF8AA /* AppDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */; };
+		655169371D05DCE4006CA230 /* ElasticModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655169361D05DCE4006CA230 /* ElasticModalViewController.swift */; };
+		6551693E1D05DCF8006CA230 /* EdgePanTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655169391D05DCF8006CA230 /* EdgePanTransition.swift */; };
+		6551693F1D05DCF8006CA230 /* ElasticShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551693A1D05DCF8006CA230 /* ElasticShapeLayer.swift */; };
+		655169401D05DCF8006CA230 /* ElasticTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551693B1D05DCF8006CA230 /* ElasticTransition.swift */; };
+		655169411D05DCF8006CA230 /* ElasticTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551693C1D05DCF8006CA230 /* ElasticTransitionPresentationController.swift */; };
+		655169421D05DCF8006CA230 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551693D1D05DCF8006CA230 /* Util.swift */; };
 		655CEEA81D04D750002E0B68 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CEEA71D04D750002E0B68 /* Reachability.m */; };
 		655CEEAA1D04D783002E0B68 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655CEEA91D04D783002E0B68 /* SystemConfiguration.framework */; };
 		655CEEAC1D04DB14002E0B68 /* CoreDataQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CEEAB1D04DB14002E0B68 /* CoreDataQueries.swift */; };
@@ -50,6 +56,12 @@
 		650A6C831C62E08000AAF8AA /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		650A6C841C62E08000AAF8AA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailVC.swift; sourceTree = "<group>"; };
+		655169361D05DCE4006CA230 /* ElasticModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticModalViewController.swift; sourceTree = "<group>"; };
+		655169391D05DCF8006CA230 /* EdgePanTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgePanTransition.swift; sourceTree = "<group>"; };
+		6551693A1D05DCF8006CA230 /* ElasticShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticShapeLayer.swift; sourceTree = "<group>"; };
+		6551693B1D05DCF8006CA230 /* ElasticTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransition.swift; sourceTree = "<group>"; };
+		6551693C1D05DCF8006CA230 /* ElasticTransitionPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransitionPresentationController.swift; sourceTree = "<group>"; };
+		6551693D1D05DCF8006CA230 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		655CEEA51D04D72A002E0B68 /* pruebaRappi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pruebaRappi-Bridging-Header.h"; sourceTree = "<group>"; };
 		655CEEA61D04D750002E0B68 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		655CEEA71D04D750002E0B68 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -112,6 +124,7 @@
 		650A6C5A1C627D0A00AAF8AA /* pruebaRappi */ = {
 			isa = PBXGroup;
 			children = (
+				655169381D05DCF8006CA230 /* ElasticTransition */,
 				655CEEA41D04D718002E0B68 /* Network */,
 				650A6C701C62857A00AAF8AA /* Model */,
 				650A6C711C62857F00AAF8AA /* View */,
@@ -155,8 +168,21 @@
 				650A6C7F1C62DB2400AAF8AA /* CatViewController.swift */,
 				650A6C5D1C627D0A00AAF8AA /* AppViewController.swift */,
 				650A6C871C63B19B00AAF8AA /* AppDetailVC.swift */,
+				655169361D05DCE4006CA230 /* ElasticModalViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		655169381D05DCF8006CA230 /* ElasticTransition */ = {
+			isa = PBXGroup;
+			children = (
+				655169391D05DCF8006CA230 /* EdgePanTransition.swift */,
+				6551693A1D05DCF8006CA230 /* ElasticShapeLayer.swift */,
+				6551693B1D05DCF8006CA230 /* ElasticTransition.swift */,
+				6551693C1D05DCF8006CA230 /* ElasticTransitionPresentationController.swift */,
+				6551693D1D05DCF8006CA230 /* Util.swift */,
+			);
+			path = ElasticTransition;
 			sourceTree = "<group>";
 		};
 		655CEEA41D04D718002E0B68 /* Network */ = {
@@ -294,14 +320,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655169411D05DCF8006CA230 /* ElasticTransitionPresentationController.swift in Sources */,
 				650A6C761C628CD800AAF8AA /* Application.swift in Sources */,
+				6551693E1D05DCF8006CA230 /* EdgePanTransition.swift in Sources */,
 				650A6C801C62DB2400AAF8AA /* CatViewController.swift in Sources */,
+				655169421D05DCF8006CA230 /* Util.swift in Sources */,
 				650A6C5E1C627D0A00AAF8AA /* AppViewController.swift in Sources */,
 				655CEEAE1D04DC3B002E0B68 /* NetworkTasksHelper.swift in Sources */,
 				650A6C641C627D0A00AAF8AA /* pruebaRappi.xcdatamodeld in Sources */,
 				650A6C7A1C62A3F700AAF8AA /* GridAppCell.swift in Sources */,
 				650A6C881C63B19B00AAF8AA /* AppDetailVC.swift in Sources */,
+				655169401D05DCF8006CA230 /* ElasticTransition.swift in Sources */,
 				655CEEAC1D04DB14002E0B68 /* CoreDataQueries.swift in Sources */,
+				6551693F1D05DCF8006CA230 /* ElasticShapeLayer.swift in Sources */,
+				655169371D05DCE4006CA230 /* ElasticModalViewController.swift in Sources */,
 				650A6C781C628E5800AAF8AA /* AppCell.swift in Sources */,
 				650A6C821C62DD6200AAF8AA /* CatCell.swift in Sources */,
 				650A6C851C62E08000AAF8AA /* Category+CoreDataProperties.swift in Sources */,

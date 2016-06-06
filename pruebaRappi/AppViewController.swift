@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class AppViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class AppViewController: ElasticModalViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var categoryLabeliPad: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -114,12 +114,10 @@ class AppViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     @IBAction func iPadBackBtnPressed(sender: AnyObject) {
-        
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissFromLeft(sender as? UIView)
     }
     
     @IBAction func iPhoneBackButtonPressed(sender: AnyObject) {
-        
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissFromLeft(sender as? UIView)
     }
 }

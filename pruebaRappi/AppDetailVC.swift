@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppDetailVC: UIViewController {
+class AppDetailVC: ElasticModalViewController {
 
     
     @IBOutlet weak var appNameLbl: UILabel!
@@ -47,6 +47,6 @@ class AppDetailVC: UIViewController {
     }
     
     @IBAction func backBtnPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissFromLeft(sender as? UIView)
     }
 }
