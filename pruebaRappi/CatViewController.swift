@@ -62,6 +62,8 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
             apps = [Application]()
             categoriesArray = [Category]()
             categoriesTextArray = [String]()
+            CoreDataQueries.deleteAllData("Application")
+            CoreDataQueries.deleteAllData("Category")
             self.showWaitOverlayWithText("cargando")
             NetworkTasksHelper.downloadData(self)
         }
