@@ -105,10 +105,9 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        var cat: Category!
+        var cat: Category
         cat = categoriesArray[indexPath.row]
         transition.edge = .Right
-        //transition.startingPoint = sender.center
         performSegueWithIdentifier("MenuVC", sender: cat)
     }
     
@@ -133,10 +132,11 @@ class CatViewController: UIViewController,UITableViewDelegate, UITableViewDataSo
                 
                 if let category = sender as? Category {
                     
-                    let catName = category.categoryName
-                    let filteredApps = filterApps(catName!)
-                    menuVC.category = category
-                    menuVC.apps = filteredApps
+                    if let catName = category.categoryName {
+                        let filteredApps = filterApps(catName)
+                        menuVC.category = category
+                        menuVC.apps = filteredApps
+                    }
                 }
             }
         }

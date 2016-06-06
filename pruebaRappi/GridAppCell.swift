@@ -17,16 +17,20 @@ class GridAppCell: UICollectionViewCell {
     func configureCell(app: Application) {
         appNameGrid.text = app.name
         
-        Alamofire.request(.GET, app.imageUrl!).response(completionHandler: {
-            request, response, data, err in
-            
-            if err == nil {
-                if let img = UIImage(data: data!) {
-                    self.appImgGrid.image = img
-                    app.image = data
+        if let imageUrl = app.imageUrl {
+            Alamofire.request(.GET, imageUrl).response(completionHandler: {
+                request, response, data, err in
+                
+                if err == nil {
+                    if let imageData = data {
+                        if let img = UIImage(data: imageData) {
+                            self.appImgGrid.image = img
+                            app.image = data
+                        }
+                    }
                 }
-            }
-        })
+            })
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {

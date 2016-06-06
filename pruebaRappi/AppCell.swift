@@ -18,21 +18,29 @@ class AppCell: UITableViewCell {
     
     func configureCell(app: Application) {
         appName.text = app.name
-        appPrice.text = "$\(app.price!) USD"
+        
+        if let price = app.price {
+          appPrice.text = "$\(price) USD"
+        }
+        
         reach = Reachability.reachabilityForInternetConnection()
         if reach.isReachable() {
-            Alamofire.request(.GET, app.imageUrl!).response(completionHandler: {
-                request, response, data, err in
-                
-                if err == nil {
-                    if let img = UIImage(data: data!) {
-                        self.appImg.image = img
-                        self.appImg.layer.cornerRadius = self.appImg.frame.size.width / 2
-                        self.appImg.clipsToBounds = true
-                        app.image = data
+            if let imageUrl = app.imageUrl {
+                Alamofire.request(.GET, imageUrl).response(completionHandler: {
+                    request, response, data, err in
+                    
+                    if err == nil {
+                        if let imageData = data {
+                            if let img = UIImage(data: imageData) {
+                                self.appImg.image = img
+                                self.appImg.layer.cornerRadius = self.appImg.frame.size.width / 2
+                                self.appImg.clipsToBounds = true
+                                app.image = data
+                            }
+                        }
                     }
-                }
-            })
+                })
+            }
         }
     }
     
